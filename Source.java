@@ -26,16 +26,13 @@ class Node<T> {
         Node<String> b = new Node<>("b");
         Node<String> c = new Node<>("c");
         Node<String> d = new Node<>("d");
+        Node<Integer> node1 = new Node<>(42);
 
         a.next = b;
         b.next = c;
         c.next = d;
-
         // a -> b -> c -> d
-
         System.out.println(Source.linkedListFind(a, "c"));
-        System.out.println(Source.linkedListFind(a, "e"));
-        
+        System.out.println(Source.linkedListFind(node1, 100));
     }
-
   }
