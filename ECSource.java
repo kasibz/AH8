@@ -20,6 +20,7 @@ class ECSource {
     while (curr != null) {
       if (i == index) {
         result = curr.val;
+        return result;
       }
       // move pointer and increment counter
       curr = curr.next;
