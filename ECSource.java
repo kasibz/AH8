@@ -11,7 +11,21 @@ class Node<T> {
 class ECSource {
   public static <T> T getNodeValue(Node<T> head, int index) {
     // todo - note the return type, but don't overthink it
-    return;
+    // initialze pointer to head, null T obj, and counter variables
+    Node<T> curr = head;
+    T result = null;
+    int i = 0;
+
+    // iterate through LL and return the val as generic type if index matches counter
+    while (curr != null) {
+      if (i == index) {
+        result = curr.val;
+      }
+      // move pointer and increment counter
+      curr = curr.next;
+      i++;
+    }
+    return result;
   }
   
   public static void main(String[] args) {
@@ -25,5 +39,17 @@ class ECSource {
     // banana -> mango -> kiwi
 
     System.out.println(ECSource.getNodeValue(node1, 1));
+
+    Node<String> a = new Node<>("a");
+    Node<String> b = new Node<>("b");
+    Node<String> c = new Node<>("c");
+    Node<String> d = new Node<>("d");
+    
+    a.next = b;
+    b.next = c;
+    c.next = d;
+
+    System.out.println(ECSource.getNodeValue(a, 7));
+
   }
 }
