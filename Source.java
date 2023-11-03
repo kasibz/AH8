@@ -11,6 +11,13 @@ class Node<T> {
   class Source {
     public static <T> boolean linkedListFind(Node<T> head, T target) {
       // todo
+      Node<T> curr = head;
+
+      while (curr != null) {
+        if (curr.val.equals(target))
+          return true;
+        curr = curr.next;
+      }
       return false;
     }
     
@@ -27,6 +34,7 @@ class Node<T> {
         // a -> b -> c -> d
 
         System.out.println(Source.linkedListFind(a, "c"));
+        System.out.println(Source.linkedListFind(a, "e"));
         
     }
 
